@@ -4,10 +4,101 @@ block content
   h1= title
   p Welcome to #{title}
   
-  ul
-    each cont in contacts
-     li 
-      h4= cont.firstname
-      p= cont.lastname 
-      p= cont.email 
-      p= cont.phonenumber 
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Travel Expert Agency
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+    script(src='https://use.fontawesome.com/releases/v5.0.8/js/all.js')
+    link(href='style.css' rel='stylesheet') 
+
+  //- Navigation Bar
+  nav.navbar.navbar-expand-md.navbar-light.bg-light.sticky-top
+  .container-fluid
+    a.navbar-brand(href='#')
+      img(src='img/logo.png')
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarResponsive')
+      span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto
+        li.nav-item.active
+          a.nav-link(href='#') Home
+        li.nav-item
+          a.nav-link(href='#') About Us
+        li.nav-item
+          a.nav-link(href='#') Services
+        li.nav-item
+          a.nav-link(href='#') Team
+        li.nav-item
+          a.nav-link(href='#') Connect
+
+  //- Image Slider 
+  #slides.carousel.slide(data-ride='carousel')
+  ul.carousel-indicators
+    li.active(data-target='#slides' data-slide-to='0')
+    li(data-target='#slides' data-slide-to='1')
+    li(data-target='#slides' data-slide-to='2')
+.carousel-item.active
+  img(src='img/background.png')
+.carousel-item
+  img(src='img/background2.png')
+.carousel-item
+  img(src='img/background3.png')
+
+  //- Welcome Section 
+  .container-fluid.padding
+  .row.wlecome.text-center
+    .col-12
+      h1.display-4 Travel with Ease
+      hr.light
+    hr
+    .col-12
+      p.lead
+        | Welcome to the official website of Travel Agency Expert where you can see different types of travel plans that suits your family size at low costs. With low cost to popular Canadian destinations, we are ready for your summer getaway or family and friends reunion
+
+//- Three Column Section 
+.container-fluid.padding
+  .row.text-center.padding
+    .colum-xs-12.col-sm-6.col-md-4
+      h3 About Us
+      p We are travel agency experts...
+    .colum-xs-12.col-sm-6.col-md-4
+      h3 Our Services
+      p Our services consists of...
+  hr.my-4
+
+//- Two Column Section 
+.container-fluid.padding
+  .row.padding
+    .col-lg-6
+      h2 FLY WITH FLEXIBILITY
+      p
+        | We have relaxed our change and cancellation policies to make it easier to manage travel impacted by COVID-19. Please read the following to see which policy applies to you
+      br
+      a.btn.btn-primary(href='#') Learn more
+    .col-lg-6
+      img.img-fluid(src='img/desk.png')
+hr.my-4
+
+//- Fixed Background 
+figure
+  .fixed-wrap
+    #fixed
+
+//- Emoji Section 
+button.fun(data-toggle='collapse' data-target='#emoji') click for fun
+#emoji.collapse
+  .container-fluid.padding
+    .row.text-center
+      .col-sm-6.col-md-3
+        img.gif(src='img/gif/panda.gif')
+      .col-sm-6.col-md-3
+        img.gif(src='img/gif/unicorn.gif')
+      .col-sm-6.col-md-3
+        img.gif(src='img/gif/chicken.gif')
+      .col-sm-6.col-md-3
+        img.gif(src='img/gif/poo.gif'
+

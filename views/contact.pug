@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  h1= title
+  h3 Contact Us 
+  
+  form(action='/Contact Us/Contact Us here' method='POST')
+    head
+    .row.text-center.padding
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        title contact form
+    link(href='contact-form.css' rel='stylesheet')
+    .fcf-body
+    #fcf-form
+        h3.fcf-h3 Contact us
+        form#fcf-form-id.fcf-form-class(method='post' action='contact-form-process.php')
+        .fcf-form-group
+            label.fcf-label(for='Name') Your name
+            .fcf-input-group
+            input#Name.fcf-form-control(type='text' name='Name' required='')
+        .fcf-form-group
+            label.fcf-label(for='Email') Your email address
+            .fcf-input-group
+            input#Email.fcf-form-control(type='email' name='Email' required='')
+        .fcf-form-group
+            label.fcf-label(for='Message') Your message
+            .fcf-input-group
+            textarea#Message.fcf-form-control(name='Message' rows='6' maxlength='3000' required='')
+        .fcf-form-group
+            button#fcf-button.fcf-btn.fcf-btn-primary.fcf-btn-lg.fcf-btn-block(type='submit') Send Message
+
+// Return back to Home Page
+a(href='index.html') Home
+.container-fluid.padding
+  .row.text-center
+    .col-12
+      hr.light
+      h5 &copy; travelexpertagency.com

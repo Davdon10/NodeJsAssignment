@@ -25,10 +25,10 @@ db.once('open', function() {
 
 const { Contact } = require("./models/contact");
 person = new Contact({
-  firstname: "Sola",
-  Lastname: "Oyatunji",
-  Email: "sola.oyatunji@xxx.com",
-  PhoneNumber: "5679873452",
+  firstname: "Tayo",
+  Lastname: "Taylor",
+  Email: "tayo.taylor@xxx.com",
+  PhoneNumber: "4033333752",
 });
 person.save();
 // ---------------------------------------
