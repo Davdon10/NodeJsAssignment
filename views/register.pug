@@ -1,8 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  h3 Register with us 
+   
   
   form(action='/registration/register' method='POST')
   form(action='action_page.php')
@@ -84,12 +83,23 @@ block content
     text-align: center;
     }
 
+  script.
+    function validateForm() {
+    var nameVal = document.forms["simpleForm"]["name"].value;
+    if(nameVal == null || nameVal == "") {
+    document.getElementsByClassName( "errorMessage" )[0].style.visibility = "visible";
+    document.getElementsByClassName( "errorMessage" )[0].innerHTML = "Please Fill out this field";
+    return false;
+    } else {
+    return true;
+    }
+    }
+
   // Return back to Home Page
-a(href='index.html') Home
-.container-fluid.padding
-  .row.text-center
-    .col-12
-      hr.light
-      h5 &copy; travelexpertagency.com
-    | j
-   
+  a(href='index.html') Home
+  .container-fluid.padding
+    .row.text-center
+      .col-12
+        hr.light
+        h5 &copy; travelexpertagency.com
+      

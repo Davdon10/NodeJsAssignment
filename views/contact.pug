@@ -1,8 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  h3 Contact Us 
+  
   
   form(action='/Contact Us/Contact Us here' method='POST')
     head
@@ -30,10 +29,10 @@ block content
         .fcf-form-group
             button#fcf-button.fcf-btn.fcf-btn-primary.fcf-btn-lg.fcf-btn-block(type='submit') Send Message
 
-// Return back to Home Page
-a(href='index.html') Home
-.container-fluid.padding
-  .row.text-center
-    .col-12
-      hr.light
-      h5 &copy; travelexpertagency.com
+  // Return back to Home Page
+  a(href='index.html') Home
+  .container-fluid.padding
+    .row.text-center
+      .col-12
+        hr.light
+        h5 &copy; travelexpertagency.com

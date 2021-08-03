@@ -1,8 +1,8 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  //- h1= title
+  //- p Welcome to #{title}, a place of vacation and rest.
   
   head
     meta(charset='utf-8')
@@ -15,90 +15,249 @@ block content
     script(src='https://use.fontawesome.com/releases/v5.0.8/js/all.js')
     link(href='style.css' rel='stylesheet') 
 
-  //- Navigation Bar
-  nav.navbar.navbar-expand-md.navbar-light.bg-light.sticky-top
-  .container-fluid
-    a.navbar-brand(href='#')
-      img(src='img/logo.png')
-    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarResponsive')
-      span.navbar-toggler-icon
-    #navbarResponsive.collapse.navbar-collapse
-      ul.navbar-nav.ml-auto
-        li.nav-item.active
-          a.nav-link(href='#') Home
-        li.nav-item
-          a.nav-link(href='#') About Us
-        li.nav-item
-          a.nav-link(href='#') Services
-        li.nav-item
-          a.nav-link(href='#') Team
-        li.nav-item
-          a.nav-link(href='#') Connect
+  
+    //- Navigation Bar
+    nav.navbar.navbar-expand-md.navbar-light.bg-light.sticky-top
+      .container-fluid
+        a.navbar-brand(href='#')
+          img(src='/images/logo.png')
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarResponsive')
+          span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item.active
+              a.nav-link(href='#') Home
+            li.nav-item
+              a.nav-link(href='#') About Us
+            li.nav-item
+              a.nav-link(href='#') Services
+            li.nav-item
+              a.nav-link(href='#') Team
+            li.nav-item
+              a.nav-link(href='#') Connect
 
-  //- Image Slider 
-  #slides.carousel.slide(data-ride='carousel')
-  ul.carousel-indicators
-    li.active(data-target='#slides' data-slide-to='0')
-    li(data-target='#slides' data-slide-to='1')
-    li(data-target='#slides' data-slide-to='2')
-.carousel-item.active
-  img(src='img/background.png')
-.carousel-item
-  img(src='img/background2.png')
-.carousel-item
-  img(src='img/background3.png')
+              
+    #TECarousel.carousel.slide.carousel-fade.bg-info(data-bs-ride='carousel')
+      .carousel-indicators
+        button.active(type='button' data-bs-target='#TECarousel' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+        button(type='button' data-bs-target='#TECarousel' data-bs-slide-to='1' aria-label='Slide 2')
+        button(type='button' data-bs-target='#TECarousel' data-bs-slide-to='2' aria-label='Slide 3')
+        button(type='button' data-bs-target='#TECarousel' data-bs-slide-to='3' aria-label='Slide 4')
+        button(type='button' data-bs-target='#TECarousel' data-bs-slide-to='4' aria-label='Slide 5')
+        button(type='button' data-bs-target='#TECarousel' data-bs-slide-to='5' aria-label='Slide 6')
+      .carousel-inner
+        .carousel-item.bg-info.active(data-interval='50')
+          .container-fluid
+            img.d-block.w-100(src='/images/background.png' alt='...')
+            .carousel-caption.d-none.d-md-block
+              h5 Visit Middle East
+              p
+                | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse, quo qui ratione id dolor
+                | error.
+        .carousel-item.bg-info(data-interval='50')
+          .container-fluid
+            img.d-block.w-100(src='/images/background2.png' alt='...')
+            .carousel-caption.d-none.d-md-block
+              h5 South California 
+              p
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo non maxime quas
+                | voluptas iusto autem ab neque deserunt fuga nesciunt! Pariatur cum omnis veniam,
+                | voluptatem quod repellendus tenetur vel rem?
+        .carousel-item.bg-info(data-interval='50')
+          .container-fluid
+            img.d-block.w-100(src='/images/background3.png' alt='...')
+            .carousel-caption.d-none.d-md-block
+              h5 Visit Africa
+              p
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eum sequi unde.
+                | Est officiis error dolorem beatae aspernatur nobis aut deserunt sequi inventore,
+                | voluptatibus eligendi.
+        
+      button.carousel-control-prev(type='button' data-bs-target='#TECarousel' data-bs-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.visually-hidden Previous
+      button.carousel-control-next(type='button' data-bs-target='#TECarousel' data-bs-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.visually-hidden Next
 
-  //- Welcome Section 
-  .container-fluid.padding
-  .row.wlecome.text-center
-    .col-12
-      h1.display-4 Travel with Ease
-      hr.light
-    hr
-    .col-12
-      p.lead
-        | Welcome to the official website of Travel Agency Expert where you can see different types of travel plans that suits your family size at low costs. With low cost to popular Canadian destinations, we are ready for your summer getaway or family and friends reunion
+    section#carousel.col-lg-12.col-md-1.bg-info.mt-0
+    
+      .container
+        //- Image Slider 
+        #slides.carousel.slide(data-ride='carousel')
+          ul.carousel-indicators
+            li.active(data-target='#slides' data-slide-to='0')
+            li(data-target='#slides' data-slide-to='1')
+            li(data-target='#slides' data-slide-to='2')
+          //- .carousel-item.active
+          //-   img(src='/images/background.png')
+          //- .carousel-item
+          //-   img(src='/images/background2.png')
+          //- .carousel-item
+          //-   img(src='/images/background3.png')
 
-//- Three Column Section 
-.container-fluid.padding
-  .row.text-center.padding
-    .colum-xs-12.col-sm-6.col-md-4
-      h3 About Us
-      p We are travel agency experts...
-    .colum-xs-12.col-sm-6.col-md-4
-      h3 Our Services
-      p Our services consists of...
-  hr.my-4
+    
+      //- Welcome Section 
+      .container-fluid.padding
+        .row.wlecome.text-center
+          .col-12
+            h1.display-4 Travel with Ease
+            hr.light
+            hr
+          .col-12
+            p
+              | Welcome to the official website of Travel Agency Expert where you can see different types of travel plans that suits your family size at low costs. With low cost to popular Canadian destinations, we are ready for your summer getaway or family and friends reunion
 
-//- Two Column Section 
-.container-fluid.padding
-  .row.padding
-    .col-lg-6
-      h2 FLY WITH FLEXIBILITY
-      p
-        | We have relaxed our change and cancellation policies to make it easier to manage travel impacted by COVID-19. Please read the following to see which policy applies to you
-      br
-      a.btn.btn-primary(href='#') Learn more
-    .col-lg-6
-      img.img-fluid(src='img/desk.png')
-hr.my-4
+    //- Three Column Section 
+    //- .container-fluid.padding
+    //-   .row.text-center.padding
+    //-     .colum-xs-12.col-sm-6.col-md-4
+    //-       h3 About Us
+    //-       p We are travel agency experts...
+    //-     .colum-xs-12.col-sm-6.col-md-4
+    //-       h3 Our Services
+    //-       p Our services consists of...
+    //-       hr.my-4
 
-//- Fixed Background 
-figure
-  .fixed-wrap
-    #fixed
+    //- Two Column Section 
+    .container-fluid.padding
+      .row.padding
+        .col-lg-6
+          h2 FLY WITH FLEXIBILITY
+          p
+            | We have relaxed our change and cancellation policies to make it easier to manage travel impacted by COVID-19. Please read the following to see which policy applies to you
+          br
+          a.btn.btn-primary(href='#') Learn more
+        .col-lg-6
+          img.img-fluid(src='/images/desk.png')
+          hr.my-4
 
-//- Emoji Section 
-button.fun(data-toggle='collapse' data-target='#emoji') click for fun
-#emoji.collapse
+    //- Fixed Background 
+    figure
+      .fixed-wrap
+        #fixed
+
+    //- Emoji Section 
+    button.fun(data-toggle='collapse' data-target='#emoji') click for fun
+    #emoji.collapse
+      .container-fluid.padding
+        .row.text-center
+          .col-sm-6.col-md-3
+            img.gif(src='/images/gif/panda.gif')
+          .col-sm-6.col-md-3
+            img.gif(src='/images/gif/unicorn.gif')
+          .col-sm-6.col-md-3
+            img.gif(src='/images/gif/chicken.gif')
+          .col-sm-6.col-md-3
+            img.gif(src='/images/gif/poo.gif')
+
+      <!--- Meet the team -->
+        .container-fluid.padding
+          .row.welcome.text-center
+            .col-12
+              h1.display-4 Meet the Team
+            hr
+            
+          <!--- Cards -->
+            div(clsaa='container-fluid padding')
+              .row.padding
+                .col-md-4
+                  .card
+                    img.card-imd-top(src='/images/team1.png')
+                    .card-body
+                      h4.card-title Kayode Ojo
+                      p.card-text
+                        | Kayode is an travel agent expert with more than 10 years of experience in helping clients fulfil their vacation plans.
+                      a.btn.btn-outline-secondary(href='#') See Kayode&apos;s Profile
+                .col-md-4
+                  .card
+                    img.card-imd-top(src='/images/team2.png')
+                    .card-body
+                      h4.card-title Kate John
+                      p.card-text
+                        | Kate is an travel agent expert with more than 10 years of experience in helping clients fulfil their vacation plans.
+                      a.btn.btn-outline-secondary(href='#') See Kate&apos;s Profile
+                .col-md-4
+                  .card
+                    img.card-imd-top(src='/images/team3.png')
+                    .card-body
+                      h4.card-title David Hardy
+                      p.card-text
+                        | David is an travel agent expert with more than 10 years of experience in helping clients fulfil their vacation plans.
+                      a.btn.btn-outline-secondary(href='#') See David&apos;s Profile
+            
+            <!--- Two Column Section -->
+            .container-fluid.padding
+              .row.padding
+                .col-lg-6
+                  h2 READY. SET. FLY
+                  p Safe 15% off base fare to your desire location.
+                .col-lg-6
+                  img.img-fluid(src='/images/bootstrap2.png')
+
+              <!--- Connect -->
+                  .container-fluid.padding
+                    .row.text-center.padding
+                      .col-12
+                        h2 Connect
+                      .col-12.social.padding
+                        a(href='#')
+                          i.fab.fa-facebook
+                        a(href='#')
+                          i.fab.fa-twitter
+                        a(href='#')
+                          i.fab.fa-google-plus-g
+                        a(href='#')
+                          i.fab.fa-instagram
+                        a(href='#')
+                          i.fab.fa-youtube
+
+                          .container-fluid.padding
+
+            <!-- Contact and Registration form -->
+                  .row.text-center.padding
+                    .col-12
+                      h4
+                        a(href='Register' target='_blank') Register with Us
+                      h4
+                        a(href='Contact' target='_blank') Contact Us
+
+                        footer
   .container-fluid.padding
     .row.text-center
-      .col-sm-6.col-md-3
-        img.gif(src='img/gif/panda.gif')
-      .col-sm-6.col-md-3
-        img.gif(src='img/gif/unicorn.gif')
-      .col-sm-6.col-md-3
-        img.gif(src='img/gif/chicken.gif')
-      .col-sm-6.col-md-3
-        img.gif(src='img/gif/poo.gif'
+      .col-md-4
+        // <img src="/images/w3newbie.png">
+        hr.light
+        h5 Contact Us
+        hr.light
+        p 555-555-5555
+        p email@travelexpertagency.ca
+        p 100 4th Avenue, SW
+        p Calgary, Alberta, Canada.
+      .col-md-4
+        hr.light
+        h5 Our Hours
+        hr.light
+        p Monday - Friday: 8am - 4pm
+        p Saturday: 10am - 3pm
+        p Sunday: Closed
+      .col-md-4
+        hr.light
+        h5 Our Locations
+        hr.light
+        p Calgary, Alberta, Canada
+        p Toronto, Ontario, Canada
+        p Texas, USA
+      .col-12
+        hr.light
+        h5 &copy; travelexpertagency.com
 
+                        
+
+
+              
+
+      
+          
+
+        

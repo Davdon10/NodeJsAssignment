@@ -6,7 +6,7 @@ const { Contact } = require("../models/contact");
 /* GET home page. */
 router.get("/", function(req, res, next) {
   Contact.find({}, (err, contact) =>{
-   res.render("index", { title: "Our Contacts", contacts });
+   res.render("index", { title: "Travel Expert Agency", contact });
   });
 });
 
